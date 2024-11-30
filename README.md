@@ -11,13 +11,11 @@ This project extends our previous work on human activity recognition using the *
 - [Dataset](#dataset)
 - [Project Structure](#project-structure)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Advanced Data Augmentation](#advanced-data-augmentation)
 - [Model Development](#model-development)
 - [Results](#results)
 - [Conclusion](#conclusion)
 - [Acknowledgments](#acknowledgments)
-- [License](#license)
 
 ---
 
@@ -60,13 +58,11 @@ HAR-WISDM-Advanced/
 
 ## **Installation**
 
-### **Prerequisites**
-
 - Python 3.6 or higher
 - Virtual environment tool (recommended)
 
 
-## **Data Augmentation**
+## **Advanced Data Augmentation**
 
 To enhance the diversity of the training data and address overfitting, we implemented advanced data augmentation techniques tailored for time-series data:
 
