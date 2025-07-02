@@ -165,7 +165,5 @@ By implementing advanced data augmentation techniques and experimenting with dif
 ## **Acknowledgments**
 
 - **WISDM Lab**: For providing the dataset.
-- **TensorFlow and Keras**: For the deep learning framework used in this project.
-
 
 ---
