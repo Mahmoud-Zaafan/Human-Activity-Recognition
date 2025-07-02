@@ -31,7 +31,6 @@ env/
 *.ipynb_checkpoints/
 
 # Data files
-data/raw/
 data/processed/sequences.npz
 data/processed/WISDM_*.csv
 data/augmented/
