@@ -1,0 +1,64 @@
+# Configuration for Enhanced CNN-BiLSTM model
+
+experiment_name: enhanced_cnn_bilstm_experiment
+seed: 42
+
+data:
+  raw_data_path: data/raw/WISDM_ar_v1.1_raw.txt
+  processed_data_path: data/processed
+  augmented_data_path: data/augmented
+  time_steps: 90
+  step_size: 45
+  test_size: 0.2
+  random_state: 42
+  augmentation_enabled: true
+  augmentation_functions:
+    - add_noise
+    - scale_data
+    - time_mask
+    - time_warp
+    - window_slice
+    - window_warp
+    - magnitude_warp
+    - permute
+    - random_sampling
+
+model:
+  model_type: enhanced_cnn_bilstm
+  input_shape: [90, 3]
+  num_classes: 6
+  
+  # CNN parameters
+  cnn_filters: 64
+  cnn_kernel_size: 3
+  
+  # RNN parameters - BiLSTM specific
+  rnn_units: 64
+  rnn_type: bilstm
+  
+  # Enhanced regularization
+  dropout_rate: 0.6
+  l2_regularization: 0.001
+  
+  # Attention parameters
+  attention_heads: 4
+  attention_key_dim: 32
+
+training:
+  batch_size: 64
+  epochs: 50
+  learning_rate: 0.001
+  optimizer: adam
+  
+  # Callbacks - more conservative for enhanced model
+  early_stopping_patience: 7
+  reduce_lr_patience: 4
+  reduce_lr_factor: 0.5
+  min_lr: 0.000001
+  
+  # Class weighting
+  use_class_weights: true
+  
+  # Checkpointing
+  checkpoint_dir: experiments/checkpoints
+  save_best_only: true
